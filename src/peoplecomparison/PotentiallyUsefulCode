@@ -1,0 +1,49 @@
+        // Mallet-specific stuff: Construct a new instance list, passing it the pipe we want to use to process instances
+        // InstanceList instances = new InstanceList(MalletUtil.getPipe(), screenNames.size());
+        // Create a FileIterator, which essentially says: look in a directory for files that match a filter (in this case, that end in our list of names then "_Tweets.txt")
+        // FileIterator iterator = new FileIterator(new File(TWEET_DIRECTORY), new TxtFilter(screenNames), FileIterator.LAST_DIRECTORY);
+        // More Mallet stuff - process each instance provided by the iterator
+        // instances.addThruPipe(iterator);
+
+
+// FeatureSequence tokens = (FeatureSequence) model.getData().get(0).instance.getData();
+        // LabelSequence topics = model.getData().get(0).topicSequence;
+
+        // Formatter out = new Formatter(new StringBuilder(), Locale.US);
+        /* for (int position = 0; position < tokens.getLength(); position++) {
+            out.format("%s-%d ", dataAlphabet.lookupObject(tokens.getIndexAtPosition(position)), topics.getIndexAtPosition(position));
+        }
+        System.out.println(out); */
+
+/*
+        TopicInferencer inferencer = model.getInferencer();
+        System.out.format("\nListing topics per document:");
+        for (int numOfInst = 0; numOfInst < instances.size(); numOfInst++) {
+            //Formatter out = new Formatter(new StringBuilder(), Locale.US);
+            Instance inst = instances.get(numOfInst);
+            double[] testProbabilities = inferencer.getSampledDistribution(inst, 10, 1, 5);
+            System.out.format("\n\n%s", inst.getName());
+            for (int j = 0; j < testProbabilities.length; j++) {
+                System.out.format("\n%.3f", testProbabilities[j]);
+            }
+        } */
+
+        // Create a new instance with high probability of topic 0
+        /*
+        StringBuilder topicZeroText = new StringBuilder();
+        Iterator<IDSorter> iterator = topicSortedWords.get(0).iterator();
+
+        int rank = 0;
+        while (iterator.hasNext() && rank < 5) {
+            IDSorter idCountPair = iterator.next();
+            topicZeroText.append(dataAlphabet.lookupObject(idCountPair.getID()) + " ");
+            rank++;
+        }
+
+        // Create a new instance named "test instance" with empty target and source fields.
+        InstanceList testing = new InstanceList(instances.getPipe());
+        testing.addThruPipe(new Instance(topicZeroText.toString(), null, "test instance", null));
+
+        TopicInferencer inferencer = model.getInferencer();
+        double[] testProbabilities = inferencer.getSampledDistribution(testing.get(0), 10, 1, 5);
+        System.out.println("0\t" + testProbabilities[0]); */
